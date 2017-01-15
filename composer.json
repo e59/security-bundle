@@ -1,5 +1,5 @@
 {
-    "name": "cangulo/security-bundle",
+    "name": "e59/security-bundle",
     "description": "Basic authentication functions",
     "keywords": [],
     "type": "symfony-bundle",
