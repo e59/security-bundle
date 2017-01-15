@@ -1,0 +1,19 @@
+{
+    "name": "cangulo/security-bundle",
+    "description": "Basic authentication functions",
+    "keywords": [],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eduardo Marinho",
+            "email": "e@calmaamigo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Cangulo\\SecurityBundle\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}

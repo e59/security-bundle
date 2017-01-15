@@ -1,0 +1,42 @@
+{% extends layout %}
+
+{% block body %}
+
+    {% if error %}
+        <div class="row">
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Identificação
+                </div>
+                <div class="panel-body">
+
+                    <form action="{{ path("#{prefix}/login") }}" method="post">
+                        <div class="form-group">
+                            <label class="control-label required" for="form_email">Email</label>
+                            <input type="email" id="form_email" name="_email" required="required"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label required" for="form_senha">Senha</label>
+                            <input type="password" id="form_senha" name="_senha" required="required"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-default btn">
+                                OK
+                            </button>
+                        </div>
+                    </form>
+                    <div class="text-right">
+                        <a href="{{ path("#{prefix}/password-request") }}">Esqueci a minha senha</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
