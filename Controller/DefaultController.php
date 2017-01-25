@@ -73,6 +73,7 @@ class DefaultController extends Controller
 
     protected function passwordChange(
         Request $request,
+        $entityManagerName = 'default',
         $prefix = '',
         $layout = 'CanguloSecurityBundle::layout.html.twig',
         $template = 'CanguloSecurityBundle:Default:password_change.html.twig'
@@ -112,7 +113,7 @@ class DefaultController extends Controller
             $encoded = $encoder->encodePassword($entity, $data['nova_senha']);
             $entity->setSenha($encoded);
 
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager($entityManagerName);
             $em->persist($entity);
 
             try {
@@ -140,6 +141,7 @@ class DefaultController extends Controller
         $repository,
         $subject,
         $from,
+        $entityManagerName = 'default',
         $prefix = '',
         $layout = 'CanguloSecurityBundle::layout.html.twig',
         $htmlTemplate = 'CanguloSecurityBundle:Default/Emails:password_new.html.twig',
@@ -164,7 +166,7 @@ class DefaultController extends Controller
             $data = $form->getData();
 
 
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager($entityManagerName);
             $entity = $em->getRepository($repository)->findOneByEmail($data['email']);
 
             if ($entity) {
@@ -228,6 +230,7 @@ class DefaultController extends Controller
         Request $request,
         $repository,
         $firewall,
+        $entityManagerName = 'default',
         $prefix = '',
         $layout = 'CanguloSecurityBundle::layout.html.twig',
         $invalidTemplate = 'CanguloSecurityBundle:Default:password_new__invalid_link.html.twig',
@@ -236,7 +239,7 @@ class DefaultController extends Controller
 
         $token = $request->query->get('token');
 
-        $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager($entityManagerName);
 
         /** @var $req Senha */
         $req = $em->getRepository('CanguloSecurityBundle:Senha')->obterTokenValido($token);
