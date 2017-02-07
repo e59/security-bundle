@@ -13,7 +13,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @Index(name="senha_email_idx", columns={"email"}),
  *     @Index(name="senha_token_idx", columns={"token"})
  * })
- * @ORM\Entity(repositoryClass="Cangulo\SecurityBundle\Repository\SenhaRepository")
+ * @ORM\Entity(repositoryClass="Cangulo\SecurityBundle\Entity\Repository\SenhaRepository")
  */
 class Senha
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cangulo\SecurityBundle\Repository;
+namespace Cangulo\SecurityBundle\Entity\Repository;
 
 use Carbon\Carbon;
 
