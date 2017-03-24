@@ -19,5 +19,7 @@
     "require": {
         "nesbot/carbon": "^1.22",
         "stof/doctrine-extensions-bundle": "^1.2"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
