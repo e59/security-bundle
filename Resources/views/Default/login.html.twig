@@ -4,7 +4,7 @@
 
     {% if error %}
         <div class="row">
-            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         </div>
     {% endif %}
     <div class="row">
