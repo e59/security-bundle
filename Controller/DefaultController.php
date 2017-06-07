@@ -142,7 +142,7 @@ class DefaultController extends Controller
         $subject,
         $from,
         $entityManagerName = 'default',
-        $prefix = '',
+        $destination = 'homepage',
         $layout = 'CanguloSecurityBundle::layout.html.twig',
         $htmlTemplate = 'CanguloSecurityBundle:Default/Emails:password_new.html.twig',
         $textTemplate = 'CanguloSecurityBundle:Default/Emails:password_new.txt.twig',
@@ -278,7 +278,7 @@ class DefaultController extends Controller
                         $em->flush();
                         $this->addFlash('success', 'Sua senha foi criada.');
                         ($this->get('security.login_na_tora'))($entity, $firewall, $entity->getRoles());
-                        return $this->redirectToRoute("$prefix");
+                        return $this->redirectToRoute("$destination");
                     } catch (\Exception $e) {
                         $this->addFlash('danger',
                             'Erro de sistema. A equipe já foi notificada. Por favor, tente mais tarde.'); // que mentira
