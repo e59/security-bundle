@@ -142,6 +142,7 @@ class DefaultController extends Controller
         $subject,
         $from,
         $entityManagerName = 'default',
+        $prefix = '',
         $destination = 'homepage',
         $layout = 'CanguloSecurityBundle::layout.html.twig',
         $htmlTemplate = 'CanguloSecurityBundle:Default/Emails:password_new.html.twig',
