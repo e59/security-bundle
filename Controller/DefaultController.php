@@ -233,6 +233,7 @@ class DefaultController extends Controller
         $firewall,
         $entityManagerName = 'default',
         $prefix = '',
+        $destination = 'homepage',
         $layout = 'CanguloSecurityBundle::layout.html.twig',
         $invalidTemplate = 'CanguloSecurityBundle:Default:password_new__invalid_link.html.twig',
         $formTemplate = 'CanguloSecurityBundle:Default:password_new.html.twig'
